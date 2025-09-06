@@ -1,28 +1,17 @@
 #include <iostream>
 using namespace std;
-class gfg {
-    /*Returns the square root of n. Note that the function */
-public:
-    float squareRoot(float n)
-    {
-        /*We are using n itself as initial approximation
-          This can definitely be improved */
-        float x = n;
-        float y = 1;
-        float e = 0.000001; /* e decides the accuracy level*/
-        while (x - y > e) {
-            x = (x + y) / 2;
-            y = n / x;
-        }
-        return x;
-    }
-};
 
-/* Driver program to test above function*/
-int main()
-{
-    gfg g;
-    int n = 50;
-    cout << "Square root of " << n << " is " << g.squareRoot(n);
-    getchar();
+int main() {
+    double number = 5.0;      // Number to find square root
+    double x = number;        // Initial guess
+    double y = 1.0;           // Second guess
+    double epsilon = 0.00001; // Precision
+
+    while (x - y > epsilon) {
+        x = (x + y) / 2;
+        y = number / x;
+    }
+
+    cout << "Square root of " << number << " is " << x << endl;
+    return 0;
 }
