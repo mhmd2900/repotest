@@ -41,4 +41,8 @@ int main() {
     }
     return 0;
 }
+//
+cin.ignore(numeric_limits<streamsize>::max(), '\n');
+cin >> test;
+
 
